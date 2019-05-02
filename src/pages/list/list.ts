@@ -11,7 +11,7 @@ import { Bagels } from '../../data-store/bagels';
 })
 export class ListPage {
   items: Array<{title: string}>;
-  bagels: Bagels;
+  bagels = Bagels;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 
@@ -28,6 +28,6 @@ export class ListPage {
   }
 
   getBagels() {
-    return this.bagels.getBagels();
+    return this.bagels;
   }
 }
