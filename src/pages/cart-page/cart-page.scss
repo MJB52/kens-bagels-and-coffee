@@ -6,7 +6,7 @@
 
 .clear-format {
     width:120px;
-    height:65px;
+    height:35px;
     background-color: #6b3a0b;
     border-radius: 40px;
 }
@@ -34,4 +34,24 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button { 
     -webkit-appearance: none; 
     margin: 0; 
+}
+
+.tip-button {
+    background-color: #6b3a0b;
+    border-radius: 40px;
+}
+
+.tip-button:hover {
+    background-color: lightgray !important;
+}
+
+.checkout-button {
+    width:120px;
+    height:45px;
+    background-color: #6b3a0b;
+    border-radius: 40px;
+}
+
+.checkout-button:hover {
+    background-color: lightgray !important;
 }

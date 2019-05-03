@@ -33,19 +33,19 @@
   <ion-list>
     <ion-list-header>Tip</ion-list-header>
     <ion-row>
-      <button ion-button (click)="updateTip(.10)">10%</button>
-      <button ion-button (click)="updateTip(.15)">15%</button>
-      <button ion-button (click)="updateTip(.20)">20%</button>
+      <button class="tip-button" ion-button (click)="updateTip(.10)">10%</button>
+      <button class="tip-button" ion-button (click)="updateTip(.15)">15%</button>
+      <button class="tip-button" ion-button (click)="updateTip(.20)">20%</button>
       <ion-input placeholder="Custom" type="number" [(ngModel)]="tipForm" name="tipForm" (keyup)="changeTip()"></ion-input>
     </ion-row>
   </ion-list>
-  <span style="float:right">
+  <span style="float:left; padding-left:8px; font-size:24px">
     Price: ${{getSum()}} <br> Tax: ${{getTax()}} <br> Tip: ${{getTip()}} <br> Total: ${{getTotal()}}
   </span>
 </ion-content>
 
 <ion-footer style="text-align:center">
-  <button ion-button [disabled]="isCartEmpty()" (click)="checkout()">
+  <button class="checkout-button" ion-button [disabled]="isCartEmpty()" (click)="checkout()">
     Checkout
   </button>
 </ion-footer>
