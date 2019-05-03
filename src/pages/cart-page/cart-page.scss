@@ -4,6 +4,7 @@
     padding-left:50px;
 }
 
+<<<<<<< HEAD
 .clear-format {
     width:120px;
     height:65px;
@@ -28,4 +29,10 @@
 .row-format:hover {
     cursor:pointer;
     background-color: lightgray !important;
+=======
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+>>>>>>> 991692c8bab8c70aec0034046458e2e6221ec730
 }

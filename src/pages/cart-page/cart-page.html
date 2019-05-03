@@ -33,9 +33,10 @@
   <ion-list>
     <ion-list-header>Tip</ion-list-header>
     <ion-row>
-      <button (click)="updateTip(.10)">10%</button>
-      <button (click)="updateTip(.15)">15%</button>
-      <button (click)="updateTip(.20)">20%</button>
+      <button ion-button (click)="updateTip(.10)">10%</button>
+      <button ion-button (click)="updateTip(.15)">15%</button>
+      <button ion-button (click)="updateTip(.20)">20%</button>
+      <ion-input placeholder="Custom" type="number" [(ngModel)]="tipForm" name="tipForm" (keyup)="changeTip()"></ion-input>
     </ion-row>
   </ion-list>
   <span style="float:right">
