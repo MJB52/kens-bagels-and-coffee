@@ -38,6 +38,7 @@ export class PaymentPage {
       message: 'Success! You will now be taken back to the home page',
       buttons: [{text:'OK', handler: () =>{
           this.navCtrl.setRoot(ListPage);
+          Cart.clearCart();
       }}]
     });
 
