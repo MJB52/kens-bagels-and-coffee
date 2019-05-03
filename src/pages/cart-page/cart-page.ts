@@ -5,6 +5,7 @@ import { CheckoutPage } from '../checkout/checkout';
 import { Bagel } from '../../models/bagel';
 import { ListPage } from '../list/list';
 import { ItemDetailsPage } from '../item-details/item-details';
+import { PaymentPage } from '../payment/payment';
 
 @IonicPage()
 @Component({
@@ -16,6 +17,8 @@ export class CartPage {
   cart: Cart;
   totalPrice: number;
   pricePlusTax: number;
+  tipPrice: number = 0;
+  tipForm: any;
   bagels: Bagel[] = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     
@@ -34,7 +37,8 @@ export class CartPage {
   }
 
   checkout() {
-    this.navCtrl.setRoot(CheckoutPage);
+    Cart.setPrice(this.getTotal());
+    this.navCtrl.setRoot(PaymentPage);
   }
 
   gotoBagels() {
@@ -93,12 +97,26 @@ export class CartPage {
 
   getTotal() {
     this.pricePlusTax = this.totalPrice * 1.065;
+    this.pricePlusTax += this.tipPrice;
     const total = Number(this.pricePlusTax).toFixed(2);
     return total;
   }
 
   isCartEmpty() {
     return (this.totalPrice == 0);
+  }
+
+  updateTip(percentage: number) {
+    this.tipPrice = percentage * this.totalPrice;
+  }
+
+  getTip() {
+    return Number(this.tipPrice).toFixed(2);
+  }
+
+  changeTip() {
+    const temp = Number(this.tipForm);
+    this.tipPrice = temp;
   }
 
   getAddOns(item : Bagel): string{

@@ -5,33 +5,47 @@
         <ion-icon name="arrow-back"></ion-icon>
       </button>
       <ion-label class="cart-label">Cart</ion-label>
-      <button ion-button (click)="clearCart()">
-        Clear Cart &nbsp;
-        <ion-icon name="trash"></ion-icon>
-      </button>
     </ion-row>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
+
+
+    <button class="clear-format" ion-button (click)="clearCart()">
+      Clear Cart &nbsp;
+      <ion-icon name="trash"></ion-icon>
+    </button>
+
+    <ion-grid>
+        <ion-row class="row-format" *ngFor="let item of bagels" (click)="itemDetails(item)">
+          <ion-col>
+            <ion-label>{{item.name}}</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-label>${{getPrice(item)}}</ion-label>
+          </ion-col>
+          <ion-col>
+            <button class="remove-format" ion-button (click)="removeItem(item)"><ion-icon name="trash"></ion-icon></button>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
   <ion-list>
-    
-    <ng-container *ngFor="let item of bagels">
-      <ion-row>
-        <button ion-item (click)="itemDetails(item)">{{item.name}} Bagel {{ getAddOns(item)}} {{item.smear ? item.smear.name : ' '}}</button>
-        <ng-container>${{getPrice(item)}}</ng-container>
-        <button ion-button (click)="removeItem(item)"><ion-icon name="trash"></ion-icon></button>
-      </ion-row>
-    </ng-container>
-    
+    <ion-list-header>Tip</ion-list-header>
+    <ion-row>
+      <button class="tip-button" ion-button (click)="updateTip(.10)">10%</button>
+      <button class="tip-button" ion-button (click)="updateTip(.15)">15%</button>
+      <button class="tip-button" ion-button (click)="updateTip(.20)">20%</button>
+      <ion-input placeholder="Custom" type="number" [(ngModel)]="tipForm" name="tipForm" (keyup)="changeTip()"></ion-input>
+    </ion-row>
   </ion-list>
-  <span style="float:right">
-    Price: ${{getSum()}} <br> Tax: ${{getTax()}} <br> Total: ${{getTotal()}}
+  <span style="float:left; padding-left:8px; font-size:24px">
+    Price: ${{getSum()}} <br> Tax: ${{getTax()}} <br> Tip: ${{getTip()}} <br> Total: ${{getTotal()}}
   </span>
 </ion-content>
 
 <ion-footer style="text-align:center">
-  <button ion-button [disabled]="isCartEmpty()">
+  <button class="checkout-button" ion-button [disabled]="isCartEmpty()" (click)="checkout()">
     Checkout
   </button>
 </ion-footer>

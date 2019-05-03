@@ -4,6 +4,7 @@ import { of } from "rxjs/observable/of";
 
 export class Cart{
     private static bagels: Bagel [] = [];
+    private static totalPrice: number;
 
     static addToCart(bagel: Bagel){
         this.bagels.push(bagel);
@@ -43,5 +44,13 @@ export class Cart{
 
     static clearCart(){
         this.bagels = [];
+    }
+
+    static setPrice(val) {
+        this.totalPrice = val;
+    }
+
+    static getPrice() {
+        return this.totalPrice;
     }
 }
