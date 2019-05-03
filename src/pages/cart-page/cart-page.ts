@@ -120,10 +120,10 @@ export class CartPage {
   }
 
   getAddOns(item : Bagel): string{
-    let formattedString = '';
+    let formattedString = '+ ';
     if(item.addOns){
       item.addOns.forEach(item => {
-        formattedString += '+' + item.name + ' + ';
+        formattedString += item.name + ' + ';
       })
     }
     return formattedString;
