@@ -17,7 +17,7 @@ export class ListPage {
   }
 
   itemTapped(event, item) {
-    this.navCtrl.push(ItemDetailsPage, {
+    this.navCtrl.setRoot(ItemDetailsPage, {
       item: item
     });
   }

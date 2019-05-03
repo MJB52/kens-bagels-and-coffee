@@ -1,22 +1,28 @@
 <ion-header class="header-format">
   <ion-navbar>
     <ion-row>
-      <button class="back-format" ion-button (click)=gotoBagels()>
+      <button class="back-format" ion-button (click)="gotoBagels()">
         <ion-icon name="arrow-back"></ion-icon>
       </button>
       <ion-label class="cart-label">Cart</ion-label>
+      <button ion-button (click)="clearCart()">
+        <ion-icon name="trash"></ion-icon>
+      </button>
     </ion-row>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-list>
-    <ion-row>
-      <ng-container *ngFor="let item of bagels">
+    
+    <ng-container *ngFor="let item of bagels">
+      <ion-row>
         <button ion-item (click)="itemDetails(item)">{{item.name}}</button>
         <ng-container>${{getPrice(item)}}</ng-container>
-      </ng-container>
-    </ion-row>
+        <button ion-button (click)="removeItem(item)"><ion-icon name="trash"></ion-icon></button>
+      </ion-row>
+    </ng-container>
+    
   </ion-list>
   <span style="float:right">
     Price: ${{getSum()}} <br> Tax: ${{getTax()}} <br> Total: ${{getTotal()}}

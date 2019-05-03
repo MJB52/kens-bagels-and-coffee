@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams,LoadingController } from 'ionic-angular';
 import { Cart } from '../../data-store/cart';
 import { ADDONS } from '../../data-store/addOnDataStore';
+import { ListPage } from '../list/list';
 import { CartPage } from '../cart-page/cart-page';
 import { SMEARS } from '../../data-store/smears';
 import { Bagel } from '../../models/bagel';
@@ -22,6 +23,7 @@ export class ItemDetailsPage {
     this.selectedItem.name = item.name;
     this.selectedItem.price = item.price;
     this.selectedItem.description = item.description;
+    this.selectedItem.imageLocation = item.imageLocation;
   }
 
   addToCart(){
@@ -52,6 +54,10 @@ export class ItemDetailsPage {
   selectSmear(smear){
     this.selectedItem.smear = smear;
     console.log(smear);
+  }
+
+  gotoBagels() {
+    this.navCtrl.setRoot(ListPage);
   }
 
   presentLoading(text: string) {
