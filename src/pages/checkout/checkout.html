@@ -1,9 +1,14 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Checkout</ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Bagels List</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-
-</ion-content>
+<ion-footer style="text-align:center">
+  <button ion-button (click)="gotoCart()">
+    Back to Cart
+  </button>
+</ion-footer>

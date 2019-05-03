@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Cart } from '../../data-store/cart';
 import { CheckoutPage } from '../checkout/checkout';
 import { Bagel } from '../../models/bagel';
+import { ListPage } from '../list/list';
 
 @IonicPage()
 @Component({
@@ -32,6 +33,10 @@ export class CartPage {
   }
 
   checkout() {
-    this.navCtrl.push(CheckoutPage);
+    this.navCtrl.setRoot(CheckoutPage);
+  }
+
+  gotoBagels() {
+    this.navCtrl.setRoot(ListPage);
   }
 }

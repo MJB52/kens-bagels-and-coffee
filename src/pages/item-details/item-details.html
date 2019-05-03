@@ -1,8 +1,5 @@
 <ion-header>
   <ion-navbar>
-    <button menuToggle *ngIf="!selectedItem">
-      <ion-icon name="menu"></ion-icon>
-    </button>
     <ion-title>Bagel Details</ion-title>
   </ion-navbar>
 </ion-header>
@@ -29,3 +26,6 @@
 
     <button ion-button style="float:right" (click)="addToCart()">Add To Cart</button>
 </ion-content>
+<ion-footer style="text-align:center">
+    <button ion-button (click)="addToCart()">Add To Cart</button>
+</ion-footer>
