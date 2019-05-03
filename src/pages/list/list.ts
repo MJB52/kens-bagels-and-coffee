@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { ItemDetailsPage } from '../item-details/item-details';
-import { CartPage } from '../cart/cart';
+import { CartPage } from '../cart-page/cart-page';
 import { BAGELS } from '../../data-store/bagels';
 
 @Component({

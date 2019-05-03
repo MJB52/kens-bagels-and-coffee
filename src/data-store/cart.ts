@@ -3,17 +3,17 @@ import { Observable } from 'rxjs';
 import { of } from "rxjs/observable/of";
 
 export class Cart{
-    private bagels: Bagel [];
+    private static bagels: Bagel [];
 
-    addToCart(bagel: Bagel){
+    static addToCart(bagel: Bagel){
         this.bagels.push(bagel);
     }
     
-    getBagels(): Observable<Bagel[]> {
+    static getBagels(): Observable<Bagel[]> {
         return of(this.bagels);
     }
 
-    getTotal(): Observable<number>{
+    static getTotal(): Observable<number>{
         let total: number;
         this.bagels.forEach(element => {
             element.addOns.forEach(addon => {
@@ -22,5 +22,9 @@ export class Cart{
             total += element.price + element.smear.price;
         });
         return of(total);
+    }
+
+    static clearCart(){
+        this.bagels = [];
     }
 }

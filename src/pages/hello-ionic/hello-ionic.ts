@@ -1,6 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { MenuController, NavController } from 'ionic-angular';
-import { CartPage } from '../../pages/cart/cart';
+import { CartPage } from '../cart-page/cart-page';
 
 @Component({
   selector: 'page-hello-ionic',

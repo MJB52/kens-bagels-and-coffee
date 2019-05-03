@@ -12,7 +12,7 @@ export class CartPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CartPage');
+    
   }
 
 }
