@@ -1,5 +1,22 @@
 // http://ionicframework.com/docs/theming/
 
+.background {
+    background-image: url("../assets/imgs/bg3.png");
+    background-repeat: no-repeat;
+    background-size: 2100px;
+    box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
+}
+
+.nav-background {
+    opacity: 50%;
+}
+
+.cart-format {
+    float:right;
+    width:120px;
+    height:65px;
+    background-color: #6b3a0b;
+}
 
 // App Global Sass
 // --------------------------------------------------

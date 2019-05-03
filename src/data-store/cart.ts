@@ -16,12 +16,29 @@ export class Cart{
     static getTotal(): Observable<number>{
         let total: number;
         this.bagels.forEach(element => {
-            element.addOns.forEach(addon => {
-                total+= addon.price;
-            })
-            total += element.price + element.smear.price;
+            if (element.addOns) {
+                element.addOns.forEach(addon => {
+                    total+= addon.price;
+                })
+            }
+            if (element.smear) {
+                total += element.smear.price;
+            }
+            total += element.price; // + element.smear.price;
         });
         return of(total);
+    }
+
+    static removeItem(bagel: Bagel) {
+        for (const item of this.bagels) {
+            if (item == bagel) {
+                const i = this.bagels.indexOf(item, 0);
+                if (i > -1) {
+                    this.bagels.splice(i, 1);
+                    return;
+                }
+            }
+        }
     }
 
     static clearCart(){
