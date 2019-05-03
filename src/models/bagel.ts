@@ -5,6 +5,6 @@ export class Bagel {
     imageLocation: string;
     price: number;
     description: string;
-    smear: Smear;
-    addOns: AddOn [];
+    smear?: Smear;
+    addOns?: AddOn [];
 }
