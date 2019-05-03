@@ -1,10 +1,13 @@
 <ion-header>
   <ion-navbar>
     <ion-row>
-      <button ion-button (click)=gotoBagels()>
+      <button ion-button (click)="gotoBagels()">
         <ion-icon name="arrow-back"></ion-icon>
       </button>
       <ion-title>Cart</ion-title>
+      <button ion-button (click)="clearCart()">
+        <ion-icon name="trash"></ion-icon>
+      </button>
     </ion-row>
   </ion-navbar>
 </ion-header>
@@ -15,6 +18,7 @@
       <ng-container *ngFor="let item of bagels">
         <button ion-item (click)="itemDetails(item)">{{item.name}}</button>
         <ng-container>${{getPrice(item)}}</ng-container>
+        <button ion-button (click)="removeItem(item)"><ion-icon name="trash"></ion-icon></button>
       </ng-container>
     </ion-row>
   </ion-list>

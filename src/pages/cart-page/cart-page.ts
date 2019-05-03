@@ -46,6 +46,16 @@ export class CartPage {
     this.navCtrl.setRoot(ItemDetailsPage, {item: item});
   }
 
+  clearCart() {
+    Cart.clearCart();
+    this.navCtrl.setRoot(CartPage);
+  }
+
+  removeItem(item) {
+    Cart.removeItem(item);
+    this.navCtrl.setRoot(CartPage);
+  }
+
   getPrice(item) {
     let price = item.price;
     if (item.smear) {

@@ -22,6 +22,7 @@ export class ItemDetailsPage {
     this.selectedItem.name = item.name;
     this.selectedItem.price = item.price;
     this.selectedItem.description = item.description;
+    this.selectedItem.imageLocation = item.imageLocation;
   }
 
   addToCart(){
