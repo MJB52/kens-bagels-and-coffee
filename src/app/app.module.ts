@@ -3,10 +3,10 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
-import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
-import { CartPage } from '../pages/cart/cart';
+import { CartPage } from '../pages/cart-page/cart-page';
+import { CheckoutPage } from '../pages/checkout/checkout';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -14,10 +14,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 @NgModule({
   declarations: [
     MyApp,
-    HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    CartPage
+    CartPage,
+    CheckoutPage
   ],
   imports: [
     BrowserModule,
@@ -26,10 +26,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    CartPage
+    CartPage,
+    CheckoutPage
   ],
   providers: [
     StatusBar,

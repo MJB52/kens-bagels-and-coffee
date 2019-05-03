@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { ItemDetailsPage } from '../item-details/item-details';
-import { CartPage } from '../cart/cart';
+import { CartPage } from '../cart-page/cart-page';
 import { BAGELS } from '../../data-store/bagels';
 
 @Component({
@@ -11,7 +11,8 @@ import { BAGELS } from '../../data-store/bagels';
 })
 export class ListPage {
   bagels = BAGELS;
-
+  rootPage = this;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
   }
 
