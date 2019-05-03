@@ -10,15 +10,9 @@ import { BAGELS } from '../../data-store/bagels';
   templateUrl: 'list.html'
 })
 export class ListPage {
-  items: Array<{title: string}>;
   bagels = BAGELS;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-    this.items = [];
-    for(let i = 1; i < 11; i++) {
-      this.items.push({title: 'Bagel ' + i});
-    }
   }
 
   itemTapped(event, item) {
