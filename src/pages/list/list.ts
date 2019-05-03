@@ -11,7 +11,6 @@ import { BAGELS } from '../../data-store/bagels';
 })
 export class ListPage {
   bagels = BAGELS;
-  rootPage = this;
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
   }
@@ -23,10 +22,8 @@ export class ListPage {
   }
 
   gotoCart() {
-    // close the menu when clicking a link from the menu
-    this.menu.close();
     // navigate to the new page if it is not the current page
-    this.navCtrl.push(CartPage);
+    this.navCtrl.setRoot(CartPage);
 }
 
   getBagels() {

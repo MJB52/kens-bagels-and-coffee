@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 
 import { NavController, NavParams } from 'ionic-angular';
 import { Cart } from '../../data-store/cart';
+import { ListPage } from '../list/list';
+import { CartPage } from '../cart-page/cart-page';
 
 
 @Component({
@@ -18,5 +20,8 @@ export class ItemDetailsPage {
 
   addToCart(){
     Cart.addToCart(this.selectedItem);
+    // dialog popup?
+    // this.navCtrl.setRoot(ListPage);
+    this.navCtrl.setRoot(CartPage);
   }
 }
