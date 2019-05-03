@@ -16,7 +16,7 @@ export class ItemDetailsPage {
     this.selectedItem = navParams.get('item');
   }
 
-  addToCart(bagel){
-    Cart.addToCart(bagel);
+  addToCart(){
+    Cart.addToCart(this.selectedItem);
   }
 }

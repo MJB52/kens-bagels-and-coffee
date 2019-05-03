@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { of } from "rxjs/observable/of";
 
 export class Cart{
-    private static bagels: Bagel [];
+    private static bagels: Bagel [] = [];
 
     static addToCart(bagel: Bagel){
         this.bagels.push(bagel);
