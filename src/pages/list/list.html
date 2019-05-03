@@ -1,18 +1,17 @@
 <ion-header>
   <ion-navbar>
     <ion-row>
-      <ion-title>Bagels List</ion-title>
       <button style="float:right" ion-button (click)="gotoCart()">
         <ion-icon name="cart"></ion-icon>
       </button>
     </ion-row>
   </ion-navbar>
 </ion-header>
-<ion-content>
-  <ion-label style="font-size:40px; padding-left:15px; padding-top: 30px; padding-bottom: 30px">Select a Bagel</ion-label>
+<ion-content class="background">
+  <ion-label class="label-format">Select a Bagel</ion-label>
   <ion-grid class="grid-bagel">
     <ion-row>
-      <ion-col col-sm-6 col-xs-6 col-md-6 col-12 *ngFor="let item of bagels">
+      <ion-col col-sm-6 col-xs-6 col-md-6 col-12 class="col-format" *ngFor="let item of bagels">
         <button ion-button class="button-format" (click)="itemTapped($event, item)">
           {{item.name}}
         </button>
