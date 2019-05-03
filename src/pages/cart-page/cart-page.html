@@ -29,9 +29,11 @@
 </ion-content>
 
 <ion-footer style="text-align:center">
-  <button ion-button *ngIf="!isCartEmpty()" (click)="checkout()">
-    Checkout
-  </button>
+  <ng-container *ngIf="!isCartEmpty()">
+    <button ion-button (click)="checkout()">
+      Checkout
+    </button>
+  </ng-container>
   <button ion-button *ngIf="isCartEmpty()" [disabled]="true">
     Checkout
   </button>
