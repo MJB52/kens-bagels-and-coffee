@@ -6,6 +6,7 @@
       </button>
       <ion-title>Cart</ion-title>
       <button ion-button (click)="clearCart()">
+        Clear Cart &nbsp;
         <ion-icon name="trash"></ion-icon>
       </button>
     </ion-row>
@@ -28,7 +29,10 @@
 </ion-content>
 
 <ion-footer style="text-align:center">
-  <button ion-button (click)="checkout()">
+  <button ion-button *ngIf="!isCartEmpty()" (click)="checkout()">
+    Checkout
+  </button>
+  <button ion-button *ngIf="isCartEmpty()" [disabled]="true">
     Checkout
   </button>
 </ion-footer>
