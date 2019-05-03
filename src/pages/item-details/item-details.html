@@ -24,7 +24,7 @@
     <ion-item *ngFor="let element of addons">
       <ion-label>{{ element.name }}</ion-label>
       <ion-label >Price: ${{ element.price }}</ion-label>
-      <ion-checkbox color="dark" (click)="selectAddon(element)" [(ngModel)]="element.checked"></ion-checkbox>
+      <ion-checkbox color="dark" [checked]="unchecked" (click)="selectAddon(element)" [(ngModel)]="element.checked"></ion-checkbox>
     </ion-item>
   </ion-list>
     
