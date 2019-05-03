@@ -23,15 +23,22 @@
         <button ion-button (click)="removeItem(item)"><ion-icon name="trash"></ion-icon></button>
       </ion-row>
     </ng-container>
-    
+  </ion-list>
+  <ion-list>
+    <ion-list-header>Tip</ion-list-header>
+    <ion-row>
+      <button (click)="updateTip(.10)">10%</button>
+      <button (click)="updateTip(.15)">15%</button>
+      <button (click)="updateTip(.20)">20%</button>
+    </ion-row>
   </ion-list>
   <span style="float:right">
-    Price: ${{getSum()}} <br> Tax: ${{getTax()}} <br> Total: ${{getTotal()}}
+    Price: ${{getSum()}} <br> Tax: ${{getTax()}} <br> Tip: ${{getTip()}} <br> Total: ${{getTotal()}}
   </span>
 </ion-content>
 
 <ion-footer style="text-align:center">
-  <button ion-button [disabled]="isCartEmpty()">
+  <button ion-button [disabled]="isCartEmpty()" (click)="checkout()">
     Checkout
   </button>
 </ion-footer>
