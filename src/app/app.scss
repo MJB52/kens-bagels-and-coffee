@@ -1,5 +1,11 @@
 // http://ionicframework.com/docs/theming/
 
+.background {
+    background-image: url("../assets/imgs/bg3.png");
+    background-repeat: no-repeat;
+    background-size: 2100px;
+    box-shadow: 12px 29px 81px 0px rgba(0,0,0,0.75);
+}
 
 // App Global Sass
 // --------------------------------------------------

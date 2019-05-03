@@ -11,6 +11,7 @@ import { BAGELS } from '../../data-store/bagels';
 })
 export class ListPage {
   bagels = BAGELS;
+  logoPic = "../assets/imgs/KensCoffeeAndBagelsLogo.png";
   
   constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
   }
