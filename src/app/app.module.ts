@@ -8,7 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { CartPage } from '../pages/cart-page/cart-page';
 import { CheckoutPage } from '../pages/checkout/checkout';
 import { PaymentPage } from '../pages/payment/payment';
-
+import { NgXCreditCardsModule } from 'ngx-credit-cards';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -19,10 +19,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     CartPage,
     CheckoutPage,
-    PaymentPage
+    PaymentPage,
   ],
   imports: [
     BrowserModule,
+    NgXCreditCardsModule,
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],

@@ -15,6 +15,7 @@ export class CartPage {
 
   cart: Cart;
   totalPrice: number;
+  pricePlusTax: number;
   bagels: Bagel[] = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     
@@ -94,8 +95,12 @@ export class CartPage {
   }
 
   getTotal() {
-    const price = this.totalPrice * 1.065;
-    const total = Number(price).toFixed(2);
+    this.pricePlusTax = this.totalPrice * 1.065;
+    const total = Number(this.pricePlusTax).toFixed(2);
     return total;
+  }
+
+  isCartEmpty() {
+    return (this.totalPrice == 0);
   }
 }
