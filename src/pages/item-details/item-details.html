@@ -15,6 +15,16 @@
   <h4 text-center *ngIf="selectedItem">
     {{selectedItem.description}}
   </h4>
+
+  <ion-list>
+      <ion-item *ngFor="let element of addons">
+        <ion-label>{{ element.name }}</ion-label>
+        <ion-label >Price: ${{ element.price }}</ion-label>
+        <ion-checkbox color="dark" (click)="selectAddon(element)" [(ngModel)]="element.checked"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+
+    <button ion-button style="float:right" (click)="addToCart()">Add To Cart</button>
 </ion-content>
 <ion-footer style="text-align:center">
     <button ion-button (click)="addToCart()">Add To Cart</button>
