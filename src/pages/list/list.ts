@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { ItemDetailsPage } from '../item-details/item-details';
-import { Bagels } from '../../data-store/bagels';
+import { BAGELS } from '../../data-store/bagels';
 
 @Component({
   selector: 'page-list',
@@ -11,7 +11,7 @@ import { Bagels } from '../../data-store/bagels';
 })
 export class ListPage {
   items: Array<{title: string}>;
-  bagels = Bagels;
+  bagels = BAGELS;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
 

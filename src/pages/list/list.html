@@ -9,7 +9,8 @@
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of getBagels()" (click)="itemTapped($event, item)">
+    <button ion-item *ngFor="let item of bagels" (click)="itemTapped($event, item)">
+      <img src={{item.imageLocation}} />
       {{item.name}}
     </button>
   </ion-list>
