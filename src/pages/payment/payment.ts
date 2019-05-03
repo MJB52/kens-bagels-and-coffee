@@ -37,8 +37,8 @@ export class PaymentPage {
     const alert = this.alertController.create({
       message: 'Success! You will now be taken back to the home page',
       buttons: [{text:'OK', handler: () =>{
-          this.navCtrl.setRoot(ListPage);
           Cart.clearCart();
+          this.navCtrl.setRoot(ListPage);
       }}]
     });
 
