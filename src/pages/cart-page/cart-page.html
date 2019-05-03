@@ -10,3 +10,9 @@
 <ion-content padding>
 <ion-list><button ion-item *ngFor="let item of bagels"> {{item.name}}</button></ion-list>
 </ion-content>
+
+<ion-footer style="text-align:center">
+  <button ion-button (click)="checkout()">
+    Checkout
+  </button>
+</ion-footer>

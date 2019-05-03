@@ -3,18 +3,23 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Bagels List</ion-title>
-    <button style="float:right" ion-button (click)="gotoCart()">
-      <ion-icon name="cart"></ion-icon>
-    </button>
+    <ion-row>
+      <ion-title>Bagels List</ion-title>
+      <button style="float:right" ion-button (click)="gotoCart()">
+        <ion-icon name="cart"></ion-icon>
+      </button>
+    </ion-row>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <button ion-item *ngFor="let item of bagels" (click)="itemTapped($event, item)">
-      <img src={{item.imageLocation}} />
-      {{item.name}}
-    </button>
-  </ion-list>
+  <ion-grid class="grid-bagel">
+    <ion-row>
+      <ion-col col-6 *ngFor="let item of bagels">
+        <button class="button-format" (click)="itemTapped($event, item)">
+          {{item.name}}
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
