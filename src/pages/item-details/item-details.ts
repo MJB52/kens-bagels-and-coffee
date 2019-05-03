@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 
 import { NavController, NavParams } from 'ionic-angular';
 import { Cart } from '../../data-store/cart';
-import { ListPage } from '../list/list';
 import { CartPage } from '../cart-page/cart-page';
 
 
