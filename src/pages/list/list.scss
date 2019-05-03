@@ -16,13 +16,15 @@
     color: white;
 }
 
-.button-format:hover {
-    background-color: lightgray !important;
+.bagel-label {
+    font-size:45px; 
+    font-weight:bold; 
+    padding-left:50px;
 }
 
-.logo {
-    width: 100px;
-    height: 100px;
+
+.button-format:hover {
+    background-color: lightgray !important;
 }
 
 .center {
@@ -35,13 +37,13 @@
     font-size:40px; 
     font-weight:bold; 
     color:white; 
-    padding-top: 30px; 
-    padding-bottom: 30px; 
+    padding-top: 20px; 
+    padding-bottom: 5px; 
     text-align:center;
 }
 
 .col-format {
     padding-right:35px; 
     padding-left:35px;
-    padding-bottom: 35px;
+    padding-bottom: 30px;
 }
