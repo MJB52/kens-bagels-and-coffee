@@ -18,6 +18,7 @@ export class CartPage {
   totalPrice: number;
   pricePlusTax: number;
   tipPrice: number = 0;
+  tipForm: any;
   bagels: Bagel[] = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     
@@ -113,5 +114,10 @@ export class CartPage {
 
   getTip() {
     return Number(this.tipPrice).toFixed(2);
+  }
+
+  changeTip() {
+    const temp = Number(this.tipForm);
+    this.tipPrice = temp;
   }
 }
