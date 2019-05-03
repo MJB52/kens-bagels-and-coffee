@@ -38,6 +38,7 @@ export class CartPage {
   }
 
   checkout() {
+    Cart.setPrice(this.getTotal());
     this.navCtrl.setRoot(PaymentPage);
   }
 
