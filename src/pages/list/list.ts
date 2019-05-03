@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
-import { NavController, NavParams } from 'ionic-angular';
-
+import { NavController, NavParams, MenuController } from 'ionic-angular';
 import { ItemDetailsPage } from '../item-details/item-details';
+import { CartPage } from '../cart/cart';
 import { BAGELS } from '../../data-store/bagels';
 
 @Component({
@@ -12,7 +12,7 @@ import { BAGELS } from '../../data-store/bagels';
 export class ListPage {
   bagels = BAGELS;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
   }
 
   itemTapped(event, item) {
@@ -20,6 +20,13 @@ export class ListPage {
       item: item
     });
   }
+
+  gotoCart() {
+    // close the menu when clicking a link from the menu
+    this.menu.close();
+    // navigate to the new page if it is not the current page
+    this.navCtrl.push(CartPage);
+}
 
   getBagels() {
     return this.bagels;

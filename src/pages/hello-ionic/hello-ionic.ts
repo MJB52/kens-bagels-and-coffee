@@ -1,15 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
-import { Platform, MenuController, Nav } from 'ionic-angular';
+import { MenuController, NavController } from 'ionic-angular';
 import { CartPage } from '../../pages/cart/cart';
-import { NavController } from 'ionic-angular';
 
 @Component({
   selector: 'page-hello-ionic',
   templateUrl: 'hello-ionic.html'
 })
 export class HelloIonicPage {
-
-  @ViewChild(Nav) nav: Nav;
 
   rootPage = this;
 
