@@ -6,6 +6,8 @@ import { ListPage } from '../list/list';
 import { CartPage } from '../cart-page/cart-page';
 import { SMEARS } from '../../data-store/smears';
 import { Bagel } from '../../models/bagel';
+import { Smear } from '../../models/smear';
+import { AddOn } from '../../models/add-ons';
 
 @Component({
   selector: 'page-item-details',
@@ -24,6 +26,10 @@ export class ItemDetailsPage {
     this.selectedItem.price = item.price;
     this.selectedItem.description = item.description;
     this.selectedItem.imageLocation = item.imageLocation;
+    this.selectedItem.smear = item.smear;
+    this.selectedItem.addOns = item.addons;
+  }
+  ionViewDidLoad() {
   }
 
   addToCart(){
@@ -48,12 +54,10 @@ export class ItemDetailsPage {
          this.selectedItem.addOns.pop();
       }
    }
-   console.log(this.selectedItem.addOns);
   }
 
   selectSmear(smear){
     this.selectedItem.smear = smear;
-    console.log(smear);
   }
 
   gotoBagels() {
@@ -66,5 +70,12 @@ export class ItemDetailsPage {
       duration: 1000,
       dismissOnPageChange: true,
     }).present();
+  }
+
+  getDefault(smear: Smear): boolean{
+    if(this.selectedItem && this.selectedItem.smear){
+      return this.selectedItem.smear.name == smear.name;
+    }
+    return false;
   }
 }

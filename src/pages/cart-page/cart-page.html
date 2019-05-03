@@ -18,7 +18,7 @@
     
     <ng-container *ngFor="let item of bagels">
       <ion-row>
-        <button ion-item (click)="itemDetails(item)">{{item.name}}</button>
+        <button ion-item (click)="itemDetails(item)">{{item.name}} Bagel {{ getAddOns(item)}} {{item.smear ? item.smear.name : ' '}}</button>
         <ng-container>${{getPrice(item)}}</ng-container>
         <button ion-button (click)="removeItem(item)"><ion-icon name="trash"></ion-icon></button>
       </ion-row>

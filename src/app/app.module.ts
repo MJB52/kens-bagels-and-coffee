@@ -24,6 +24,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   imports: [
     BrowserModule,
     NgXCreditCardsModule,
+
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -33,7 +34,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ListPage,
     CartPage,
     CheckoutPage,
-    PaymentPage
+    PaymentPage,
   ],
   providers: [
     StatusBar,

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Modal, ModalController } from 'ionic-angular';
 import { Cart } from '../../data-store/cart';
 import { CheckoutPage } from '../checkout/checkout';
 import { Bagel } from '../../models/bagel';
@@ -29,7 +29,6 @@ export class CartPage {
   
   getItems(){
     Cart.getBagels().subscribe(items => {
-      console.log(items);
       this.bagels = items;
     });
   }
@@ -43,8 +42,6 @@ export class CartPage {
   }
 
   itemDetails(item) {
-    // Dialog?
-    this.navCtrl.setRoot(ItemDetailsPage, {item: item});
   }
 
   clearCart() {
@@ -54,7 +51,7 @@ export class CartPage {
 
   removeItem(item) {
     Cart.removeItem(item);
-    this.navCtrl.setRoot(CartPage);
+    this.getItems();
   }
 
   getPrice(item) {
@@ -102,5 +99,15 @@ export class CartPage {
 
   isCartEmpty() {
     return (this.totalPrice == 0);
+  }
+
+  getAddOns(item : Bagel): string{
+    let formattedString = '';
+    if(item.addOns){
+      item.addOns.forEach(item => {
+        formattedString += '+' + item.name + ' + ';
+      })
+    }
+    return formattedString;
   }
 }
