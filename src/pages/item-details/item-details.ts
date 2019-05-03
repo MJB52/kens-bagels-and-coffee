@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams,LoadingController } from 'ionic-angular';
 import { Cart } from '../../data-store/cart';
 import { CartPage } from '../cart-page/cart-page';
 
@@ -12,15 +11,23 @@ import { CartPage } from '../cart-page/cart-page';
 export class ItemDetailsPage {
   selectedItem: any;
   
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
   }
 
   addToCart(){
     Cart.addToCart(this.selectedItem);
+    this.presentLoading('Please wait...');
     // dialog popup?
     // this.navCtrl.setRoot(ListPage);
     this.navCtrl.setRoot(CartPage);
+  }
+  presentLoading(text: string) {
+    this.loadingCtrl.create({
+      content: text,
+      duration: 1000,
+      dismissOnPageChange: true,
+    }).present()
   }
 }
