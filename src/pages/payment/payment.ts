@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ListPage } from '../list/list';
+import { CreditCardValidator } from 'ngx-credit-cards';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @IonicPage()
 @Component({
@@ -8,12 +10,24 @@ import { ListPage } from '../list/list';
   templateUrl: 'payment.html',
 })
 export class PaymentPage {
+  isCard = true;
+  formGroup: FormGroup;
+  constructor(public navCtrl: NavController, public navParams: NavParams,private _formBuilder: FormBuilder,) {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.formGroup = this._formBuilder.group({
+      email: ['', Validators.required],
+      cardNumber: ['', [CreditCardValidator.validateCardNumber]],
+      cardExpDate: ['', [CreditCardValidator.validateCardExpiry]],
+      cardCvv: ['', [CreditCardValidator.validateCardCvc]],
+      cardName: ['', Validators.compose([Validators.required, Validators.minLength(2)])],
+    });
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PaymentPage');
+  }
+
+  toggleCard() {
+    this.isCard = !this.isCard;
   }
 
   gotoHome() {
