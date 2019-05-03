@@ -1,13 +1,15 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Bagel Details</ion-title>
+      <button class="back-format" ion-button (click)="gotoBagels()">
+          <ion-icon name="arrow-back"></ion-icon>
+      </button>
   </ion-navbar>
 </ion-header>
 
 
 <ion-content>
   <h2 text-center *ngIf="selectedItem">
-  <img src={{selectedItem.imageLocation}} />
+  <img class="image-format" src={{selectedItem.imageLocation}} />
   {{selectedItem.name}} Bagel
   </h2>
   <h3 text-center *ngIf="selectedItem">
@@ -42,5 +44,5 @@
 </ion-content>
 
 <ion-footer style="text-align:center">
-    <button ion-button (click)="addToCart()">Add To Cart</button>
+    <button class="footer-button" ion-button (click)="addToCart()">Add To Cart</button>
 </ion-footer>
