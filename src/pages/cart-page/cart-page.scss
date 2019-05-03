@@ -3,3 +3,29 @@
     font-weight:bold; 
     padding-left:50px;
 }
+
+.clear-format {
+    width:120px;
+    height:65px;
+    background-color: #6b3a0b;
+    border-radius: 40px;
+}
+
+.clear-format:hover {
+    background-color: lightgray !important;
+}
+
+.grid-cart {
+    float: left;
+}
+
+.col-format {
+    padding-right:35px; 
+    padding-left:35px;
+    padding-bottom: 30px;
+}
+
+.row-format:hover {
+    cursor:pointer;
+    background-color: lightgray !important;
+}
