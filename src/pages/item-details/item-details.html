@@ -30,14 +30,14 @@
     </ion-item>
   </ion-list>
     
-  <ion-list radio-group>
+  <ion-list>
     <ion-list-header>
       Smears
     </ion-list-header>
     <ion-item *ngFor="let smear of smears">
+      <ion-radio color="dark" (click)="selectSmear(smear)"></ion-radio>
       <ion-label>{{ smear.name }}</ion-label>
       <ion-label >Price: ${{ smear.price }}</ion-label>
-      <ion-radio color="dark" (click)="selectSmear(smear)"></ion-radio>
     </ion-item>
   </ion-list>
 

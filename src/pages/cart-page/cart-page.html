@@ -17,11 +17,11 @@
   <ion-list>
     
     <ng-container *ngFor="let item of bagels">
-      <ion-row>
+      <ion-item>
         <button ion-item (click)="itemDetails(item)">{{item.name}}</button>
         <ng-container>${{getPrice(item)}}</ng-container>
         <button ion-button (click)="removeItem(item)"><ion-icon name="trash"></ion-icon></button>
-      </ion-row>
+      </ion-item>
     </ng-container>
     
   </ion-list>
@@ -31,7 +31,7 @@
 </ion-content>
 
 <ion-footer style="text-align:center">
-  <button ion-button [disabled]="isCartEmpty()">
+  <button class="checkout-format" ion-button [disabled]="isCartEmpty()">
     Checkout
   </button>
 </ion-footer>
