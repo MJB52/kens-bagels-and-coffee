@@ -21,10 +21,10 @@ export class Cart{
                     total+= addon.price;
                 })
             }
-            total += element.price; // + element.smear.price;
-            if (element.smear.price) {
+            if (element.smear) {
                 total += element.smear.price;
             }
+            total += element.price; // + element.smear.price;
         });
         return of(total);
     }

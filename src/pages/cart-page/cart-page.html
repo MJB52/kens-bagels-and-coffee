@@ -15,11 +15,13 @@
     <ion-row>
       <ng-container *ngFor="let item of bagels">
         <button ion-item (click)="itemDetails(item)">{{item.name}}</button>
-        <ng-container>${{item.price}}</ng-container>
+        <ng-container>${{getPrice(item)}}</ng-container>
       </ng-container>
     </ion-row>
   </ion-list>
-  Price: ${{getSum()}} <br> Tax: ${{getTax()}} <br> Total: ${{getTotal()}}
+  <span style="float:right">
+    Price: ${{getSum()}} <br> Tax: ${{getTax()}} <br> Total: ${{getTotal()}}
+  </span>
 </ion-content>
 
 <ion-footer style="text-align:center">

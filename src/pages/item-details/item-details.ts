@@ -40,6 +40,7 @@ export class ItemDetailsPage {
       }
    }
    console.log(this.selectedItem.addOns);
+   element.checked = false;
   }
 
   selectSmear(smear){

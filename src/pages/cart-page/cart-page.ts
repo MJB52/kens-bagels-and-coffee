@@ -46,14 +46,32 @@ export class CartPage {
     this.navCtrl.setRoot(ItemDetailsPage, {item: item});
   }
 
+  getPrice(item) {
+    let price = item.price;
+    if (item.smear) {
+      price += item.smear.price;
+    }
+    if (item.addOns) {
+      for (const addon of item.addOns) {
+        price += addon.price;
+      }
+    }
+    const total = Number(price).toFixed(2);
+    return total;
+  }
+
   getSum() {
-    // Cart.getTotal().subscribe(price => {
-    //   this.totalPrice = price;
-    // })
-    // return this.totalPrice;
     this.totalPrice = 0;
     for (const item of this.bagels) {
       this.totalPrice += item.price;
+      if (item.smear) {
+        this.totalPrice += item.smear.price;
+      }
+      if (item.addOns) {
+        for (const addon of item.addOns) {
+          this.totalPrice += addon.price;
+        }
+      }
     }
     const total = Number(this.totalPrice).toFixed(2);
     return total;
