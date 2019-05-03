@@ -4,7 +4,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @IonicPage()
 @Component({
   selector: 'page-cart',
-  templateUrl: 'cart.html',
+  templateUrl: 'cart-page.html',
 })
 export class CartPage {
 
