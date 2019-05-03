@@ -11,7 +11,8 @@ import { BAGELS } from '../../data-store/bagels';
 })
 export class ListPage {
   bagels = BAGELS;
-
+  rootPage = this;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, public menu: MenuController) {
   }
 
