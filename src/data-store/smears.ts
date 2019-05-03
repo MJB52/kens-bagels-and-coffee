@@ -1,6 +1,7 @@
 import { Smear } from "../models/smear";
 
 export const SMEARS : Smear [] = [
+    {name:"None", price: 0},
     {name: "Butter", price: .5},
     {name:"Cream Cheese", price:2},
     {name:"Peanut Butter", price:1},

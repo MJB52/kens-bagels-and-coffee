@@ -16,10 +16,15 @@ export class Cart{
     static getTotal(): Observable<number>{
         let total: number;
         this.bagels.forEach(element => {
-            element.addOns.forEach(addon => {
-                total+= addon.price;
-            })
-            total += element.price + element.smear.price;
+            if (element.addOns) {
+                element.addOns.forEach(addon => {
+                    total+= addon.price;
+                })
+            }
+            total += element.price; // + element.smear.price;
+            if (element.smear.price) {
+                total += element.smear.price;
+            }
         });
         return of(total);
     }
