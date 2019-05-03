@@ -25,6 +25,6 @@ export class ItemDetailsPage {
       content: text,
       duration: 1000,
       dismissOnPageChange: true,
-    }).present()
+    }).present();
   }
 }
