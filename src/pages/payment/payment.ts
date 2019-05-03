@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { ListPage } from '../list/list';
 import { CreditCardValidator } from 'ngx-credit-cards';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
@@ -15,7 +15,7 @@ export class PaymentPage {
   isCard = true;
   formGroup: FormGroup;
   total: number;
-  constructor(public navCtrl: NavController, public navParams: NavParams,private _formBuilder: FormBuilder) {
+  constructor(public alertController: AlertController,public navCtrl: NavController, public navParams: NavParams,private _formBuilder: FormBuilder) {
 
     this.formGroup = this._formBuilder.group({
       email: ['', Validators.required],
@@ -33,7 +33,16 @@ export class PaymentPage {
   toggleCard() {
     this.isCard = !this.isCard;
   }
+  checkout(){
+    const alert = this.alertController.create({
+      message: 'Success! You will now be taken back to the home page',
+      buttons: [{text:'OK', handler: () =>{
+          this.navCtrl.setRoot(ListPage);
+      }}]
+    });
 
+    alert.present();
+  }
   gotoHome() {
     this.navCtrl.setRoot(ListPage);
   }
