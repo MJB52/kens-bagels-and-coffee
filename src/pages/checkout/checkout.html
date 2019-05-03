@@ -1,9 +1,15 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Checkout</ion-title>
+    <button ion-button (click)="gotoCart()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
+<ion-content>
 
 </ion-content>
+<ion-footer style="text-align:center">
+  <button ion-button (click)="gotoPay()">
+    Continue to Payment
+  </button>
+</ion-footer>

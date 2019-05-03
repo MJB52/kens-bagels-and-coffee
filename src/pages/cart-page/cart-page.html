@@ -1,14 +1,17 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Cart</ion-title>
+    <ion-row>
+      <button ion-button (click)=gotoBagels()>
+        <ion-icon name="arrow-back"></ion-icon>
+        Bagels
+      </button>
+      <ion-title>Cart</ion-title>
+    </ion-row>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-<ion-list><button ion-item *ngFor="let item of bagels"> {{item.name}}</button></ion-list>
+  <ion-list><button ion-item *ngFor="let item of bagels"> {{item.name}}</button></ion-list>
 </ion-content>
 
 <ion-footer style="text-align:center">
