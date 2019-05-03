@@ -4,19 +4,24 @@ import { Cart } from '../../data-store/cart';
 import { ADDONS } from '../../data-store/addOnDataStore';
 import { CartPage } from '../cart-page/cart-page';
 import { SMEARS } from '../../data-store/smears';
+import { Bagel } from '../../models/bagel';
 
 @Component({
   selector: 'page-item-details',
   templateUrl: 'item-details.html'
 })
 export class ItemDetailsPage {
-  selectedItem: any;
+  selectedItem: Bagel;
   addons = ADDONS;
   smears = SMEARS;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,public loadingCtrl: LoadingController) {
     // If we navigated to this page, we will have an item available as a nav param
-    this.selectedItem = navParams.get('item');
+    this.selectedItem = new Bagel();
+    const item = navParams.get('item');
+    this.selectedItem.name = item.name;
+    this.selectedItem.price = item.price;
+    this.selectedItem.description = item.description;
   }
 
   addToCart(){
@@ -24,6 +29,8 @@ export class ItemDetailsPage {
     this.presentLoading('Please wait...');
     // dialog popup?
     // this.navCtrl.setRoot(ListPage);
+
+    this.selectedItem = undefined;
     this.navCtrl.setRoot(CartPage);
   }
 
@@ -36,7 +43,7 @@ export class ItemDetailsPage {
     } else {
       const index = this.selectedItem.addOns.indexOf(element, 0);
       if (index > -1) {
-         this.selectedItem.addOns.splice(index, 1);
+         this.selectedItem.addOns.pop();
       }
    }
    console.log(this.selectedItem.addOns);

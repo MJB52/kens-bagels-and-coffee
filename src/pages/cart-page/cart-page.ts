@@ -4,6 +4,7 @@ import { Cart } from '../../data-store/cart';
 import { CheckoutPage } from '../checkout/checkout';
 import { Bagel } from '../../models/bagel';
 import { ListPage } from '../list/list';
+import { ItemDetailsPage } from '../item-details/item-details';
 
 @IonicPage()
 @Component({
@@ -13,7 +14,7 @@ import { ListPage } from '../list/list';
 export class CartPage {
 
   cart: Cart;
-
+  totalPrice: number;
   bagels: Bagel[] = [];
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     
@@ -38,5 +39,53 @@ export class CartPage {
 
   gotoBagels() {
     this.navCtrl.setRoot(ListPage);
+  }
+
+  itemDetails(item) {
+    // Dialog?
+    this.navCtrl.setRoot(ItemDetailsPage, {item: item});
+  }
+
+  getPrice(item) {
+    let price = item.price;
+    if (item.smear) {
+      price += item.smear.price;
+    }
+    if (item.addOns) {
+      for (const addon of item.addOns) {
+        price += addon.price;
+      }
+    }
+    const total = Number(price).toFixed(2);
+    return total;
+  }
+
+  getSum() {
+    this.totalPrice = 0;
+    for (const item of this.bagels) {
+      this.totalPrice += item.price;
+      if (item.smear) {
+        this.totalPrice += item.smear.price;
+      }
+      if (item.addOns) {
+        for (const addon of item.addOns) {
+          this.totalPrice += addon.price;
+        }
+      }
+    }
+    const total = Number(this.totalPrice).toFixed(2);
+    return total;
+  }
+
+  getTax() {
+    const price = this.totalPrice * .065;
+    const tax = Number(price).toFixed(2);
+    return tax;
+  }
+
+  getTotal() {
+    const price = this.totalPrice * 1.065;
+    const total = Number(price).toFixed(2);
+    return total;
   }
 }
