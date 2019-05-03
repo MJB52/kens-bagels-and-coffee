@@ -11,11 +11,31 @@
     opacity: 50%;
 }
 
+.back-format {
+    width:120px;
+    height:65px;
+    background-color: #6b3a0b;
+    border-radius: 40px;
+}
+
+.back-format:hover {
+    background-color: lightgray !important;
+}
+
 .cart-format {
     float:right;
     width:120px;
     height:65px;
     background-color: #6b3a0b;
+    border-radius: 40px;
+}
+
+.cart-format:hover {
+    background-color: lightgray !important;
+}
+
+.header-format {
+    opacity:0.9;
 }
 
 // App Global Sass
