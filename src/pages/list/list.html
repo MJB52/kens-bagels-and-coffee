@@ -13,7 +13,7 @@
   <ion-grid class="grid-bagel">
     <ion-row>
       <ion-col col-sm-6 col-xs-6 col-md-6 col-12 *ngFor="let item of bagels">
-        <button class="button-format" (click)="itemTapped($event, item)">
+        <button ion-button class="button-format" (click)="itemTapped($event, item)">
           {{item.name}}
         </button>
       </ion-col>
